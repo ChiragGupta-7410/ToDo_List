@@ -2,8 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const app = express()
-// const pasword = 'qg2v5ArebgY9F3Kp'
-const url = 'mongodb+srv://ChiragGupta7410:qg2v5ArebgY9F3Kp@todolist.57mn6fi.mongodb.net/?retryWrites=true&w=majority'
+//Enter your atlas mongoDb cluster connection string in url
+const url = 'Altas mongoDb Cluster connection string'
 
 const connectionParams={
     useNewUrlParser: true,
@@ -22,7 +22,6 @@ mongoose.connect(url, connectionParams)
 app.use(express.urlencoded({extended: true}));
 app.use('/public',express.static("public"));
 app.set("view engine","ejs")
-//mongodb cluster pasword: 3eWSeO7APkNubzuM
 
 app.use(require("./routes/index"))
 
