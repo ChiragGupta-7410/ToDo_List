@@ -1,0 +1,13 @@
+.aColor {
+    text-decoration: none;
+    color:red;
+}
+
+
+.btn-outline-danger:hover .aColor{
+    color: darkgrey;
+}
+
+.btn-outline-danger,.list-group-item {
+    margin-top: 1rem;
+}

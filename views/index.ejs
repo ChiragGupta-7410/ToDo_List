@@ -1,0 +1,27 @@
+<%- include("./head") -%>
+    <div class="container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <h1><a class="navbar-brand mb-0 h1" href="/">Todo List</a></h1>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <form action="/add/todo" method="POST" class="d-flex">
+                <input type="text" name="todo" class="form-control" placeholder="Enter Todo">
+                <input type="submit" value="Add Todo" class="btn btn-md btn-primary mx-2">
+            </form>
+        </div>
+        <ul class="list-group my-5" style="padding: 0 1.25rem 0;">
+            <% todo.forEach(todos => { %>
+                <div class="d-flex">
+                <li class="list-group-item" style="width:96%;border-radius:5rem;">
+                    <input class="form-check-input  me-1" type="checkbox" value="" id="firstCheckboxStretched">
+                    <label class="form-check-label stretched-link" for="firstCheckboxStretched"><%= todos.todo %></label>
+                </li>
+                <button type="button" class="btn btn-outline-danger mx-2" style="width:4%;"><a class="aColor" href="/delete/todo/<%= todos._id %>">X</a></button>
+                </div>
+            <% }) %>
+          </ul>
+    </div>
+
+<%- include("./footer") -%>
