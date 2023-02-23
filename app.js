@@ -26,4 +26,5 @@ app.set("view engine","ejs")
 app.use(require("./routes/index"))
 
 app.use(require("./routes/todo"))
-app.listen(3000, () => console.log("Server started listening on port: 3000"))
+const port = process.env.port || 3000
+app.listen(port, () => console.log(`Server started listening on port: ${port}`))
