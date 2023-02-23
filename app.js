@@ -2,8 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const app = express()
-//Enter your atlas mongoDb cluster connection string in url
-const url = 'Altas mongoDb Cluster connection string'
+const url = process.env.URL
 
 const connectionParams={
     useNewUrlParser: true,
